@@ -191,12 +191,12 @@ function GreenMinus() {
 }
 
 function GreenV() {
-    var e=document.getElementById("S21").innerHTML[0];
+    var e=document.getElementById("S12").innerHTML[0];
     document.getElementById("S21").innerHTML="A";
     if (e=="A") {document.getElementById("S12").innerHTML=" ";}
 }    
 function RedV() {
-    var e=document.getElementById("S12").innerHTML[0];
+    var e=document.getElementById("S21").innerHTML[0];
     document.getElementById("S12").innerHTML="A";
     if (e=="A") {document.getElementById("S21").innerHTML=" ";}
 }
