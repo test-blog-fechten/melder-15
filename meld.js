@@ -1,5 +1,15 @@
 const MaxPoints = 15; // 5,10,15,45 are typical for fencing.
 
+function AddAbschnitt() {
+    var n=document.getElementById("ab").innerHTML;
+    if ( n<3 ) 
+    { 
+      n=n*1+1; 
+    } 
+    document.getElementById("ab").innerHTML=n;
+}
+
+
 function PCard() {
     var r=document.getElementById("S12a").innerHTML;
     var g=document.getElementById("S21a").innerHTML;
@@ -123,7 +133,7 @@ function ClearAll() {
     document.getElementById("c2pr").innerHTML="0"; 
     document.getElementById("c1pb").innerHTML="0";
     document.getElementById("c2pb").innerHTML="0";
-
+    document.getElementById("ab").innerHTML="1";
 } 
 
 function ClearNull() { 
