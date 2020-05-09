@@ -156,11 +156,17 @@ function RedPlus() {
     var e=document.getElementById("S12").innerHTML[0];
     var n1=document.getElementById("S12a").innerHTML;
     var a=document.getElementById("S21").innerHTML[0];
-    if ( n1*1<MaxPoints*1 ) { n1=n1*1+1; };
-    document.getElementById("S12").innerHTML=e;
-    document.getElementById("S12a").innerHTML=n1; 
-    if ( n1*1==MaxPoints*1 ) { EndBout(); }
-    else {if ( e=="A" || a=="A" ) { EndBout(); }; }    
+    if ( a=="V" || e=="V" ) 
+    {
+    } 
+    else
+    {      
+      if ( n1*1<MaxPoints*1 ) { n1=n1*1+1; };
+      document.getElementById("S12").innerHTML=e;
+      document.getElementById("S12a").innerHTML=n1; 
+      if ( n1*1==MaxPoints*1 ) { EndBout(); }
+      else {if ( e=="A" || a=="A" ) { EndBout(); }; }
+    }
 }
 
 function RedMinus() {
@@ -175,11 +181,17 @@ function GreenPlus() {
     var e=document.getElementById("S21").innerHTML[0];
     var n1=document.getElementById("S21a").innerHTML;
     var a=document.getElementById("S12").innerHTML[0];
-    if ( n1*1<MaxPoints*1 ) { n1=n1*1+1; };
-    document.getElementById("S21").innerHTML=e;
-    document.getElementById("S21a").innerHTML=n1;
-    if ( n1*1==MaxPoints*1 ) { EndBout(); }
-    else {if ( e=="A" || a=="A" ) { EndBout(); }; }
+    if ( a=="V" || e=="V" ) 
+    {
+    } 
+    else
+    {      
+      if ( n1*1<MaxPoints*1 ) { n1=n1*1+1; };
+      document.getElementById("S21").innerHTML=e;
+      document.getElementById("S21a").innerHTML=n1;
+      if ( n1*1==MaxPoints*1 ) { EndBout(); }
+      else {if ( e=="A" || a=="A" ) { EndBout(); }; }
+    }    
 }
 
 function GreenMinus() {
