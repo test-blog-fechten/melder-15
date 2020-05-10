@@ -222,7 +222,7 @@ function getShowTime1(){
   var seconds1 = Math.floor((difference1 % (1000 * 60)) / 1000);
   var milliseconds1 = Math.floor((difference1 % (100 * 60)));
   
-  if (minutes1 > 0) { pauseTimer1(); resetTimer1(); };
+  if (minutes1 > 0) { resetTimer1(); pauseTimer1(); };
   minutes1 = 0;
   seconds1 = 59-1*seconds1;
   seconds1 = (seconds1 < 10) ? "0" + seconds1 : seconds1;
