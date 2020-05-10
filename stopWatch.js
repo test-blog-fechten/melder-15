@@ -141,7 +141,6 @@ function resetTimer(){
   paused = 0;
   running = 0;
   timerDisplay.innerHTML = '3:00';
-  timerDisplay.style.background = "#A90000";
   timerDisplay.style.color = "#fff";
   timerDisplay.style.cursor = "pointer";
   startTimerButton.classList.remove('lighter');
@@ -157,7 +156,6 @@ function resetTimer1(){
   paused1 = 0;
   running1 = 0;
   timerDisplay1.innerHTML = '1:00';
-  timerDisplay1.style.background = "#A90000";
   timerDisplay1.style.color = "#fff";
   timerDisplay1.style.cursor = "pointer";
   startTimerButton1.classList.remove('lighter');
@@ -173,7 +171,6 @@ function resetTimer2(){
   paused2 = 0;
   running2 = 0;
   timerDisplay2.innerHTML = '1:00';
-  timerDisplay2.style.background = "#A90000";
   timerDisplay2.style.color = "#fff";
   timerDisplay2.style.cursor = "pointer";
   startTimerButton2.classList.remove('lighter');
@@ -238,4 +235,3 @@ function getShowTime2(){
   seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
   timerDisplay2.innerHTML = minutes2 + ':' + seconds2;
 }
-
