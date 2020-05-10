@@ -33,7 +33,7 @@ var running2 = 0;
 function startTimer(){
   if(!running){
     startTime = new Date().getTime();
-    tInterval = setInterval(getShowTime, 1000);
+    tInterval = setInterval(getShowTime, 100);
     paused = 0;
     running = 1;
     timerDisplay.style.cursor = "auto";
@@ -48,7 +48,7 @@ function startTimer(){
 function startTimer1(){
   if(!running1){
     startTime1 = new Date().getTime();
-    tInterval1 = setInterval(getShowTime1, 1000);
+    tInterval1 = setInterval(getShowTime1, 100);
     paused1 = 0;
     running1 = 1;
     timerDisplay1.style.cursor = "auto";
@@ -63,7 +63,7 @@ function startTimer1(){
 function startTimer2(){
   if(!running2){
     startTime2 = new Date().getTime();
-    tInterval2 = setInterval(getShowTime2, 1000);
+    tInterval2 = setInterval(getShowTime2, 100);
     paused2 = 0;
     running2 = 1;
     timerDisplay2.style.cursor = "auto";
