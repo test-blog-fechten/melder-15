@@ -79,9 +79,10 @@ function startTimer2(){
 }
 
 function pauseTimer(){
-  if (!difference){
+  // if (!difference){
     // if timer never started, don't allow pause button to do anything
-  } else if (!paused) {
+  //} else 
+  if (!paused) {
     clearInterval(tInterval);
     savedTime = difference;
     paused = 1;
