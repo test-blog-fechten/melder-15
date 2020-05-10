@@ -188,8 +188,6 @@ function getShowTime(){
   minutes = (minutes < 10) ?  minutes : minutes;
   
   seconds = 59-1*seconds;
-  if (seconds < 10 ) { timerDisplay.style.background = "yellow"; }
-  if (seconds < 3 ) { timerDisplay.style.background = "red"; }
   seconds = (seconds < 10) ? "0" + seconds : seconds;
   // milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
   timerDisplay.innerHTML = minutes + ':' + seconds; // + ':' + milliseconds;
