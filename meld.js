@@ -1,11 +1,15 @@
 const MaxPoints = 15; // 5,10,15,45 are typical for fencing.
-
+const Abschitte =3; // 2 if you are fencing to 10 / 9 if 45 Team is the end. / S=Sudden Death
 function AddAbschnitt() {
     var n=document.getElementById("ab").innerHTML;
-    if ( n*1<3 ) 
+    if ( n*1 == 1 || n*1 == 2 || n*1 == 3 ) 
     { 
       n=n*1+1; 
     } 
+    else
+    {
+      n="S"  
+    }    
     document.getElementById("ab").innerHTML=n;
 }
 
