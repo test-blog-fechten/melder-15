@@ -36,7 +36,6 @@ function startTimer(){
     tInterval = setInterval(getShowTime, 1);
     paused = 0;
     running = 1;
-    timerDisplay.style.background = "#FF0000";
     timerDisplay.style.cursor = "auto";
     timerDisplay.style.color = "yellow";
     startTimerButton.classList.add('lighter');
@@ -52,7 +51,6 @@ function startTimer1(){
     tInterval1 = setInterval(getShowTime1, 1);
     paused1 = 0;
     running1 = 1;
-    timerDisplay1.style.background = "#FF0000";
     timerDisplay1.style.cursor = "auto";
     timerDisplay1.style.color = "yellow";
     startTimerButton1.classList.add('lighter');
@@ -68,7 +66,6 @@ function startTimer2(){
     tInterval2 = setInterval(getShowTime2, 1);
     paused2 = 0;
     running2 = 1;
-    timerDisplay2.style.background = "#FF0000";
     timerDisplay2.style.cursor = "auto";
     timerDisplay2.style.color = "yellow";
     startTimerButton2.classList.add('lighter');
@@ -195,8 +192,6 @@ function getShowTime(){
   } else {
     difference =  updatedTime - startTime;
   }
-  // var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((difference % (1000 * 60)) / 1000);
   var milliseconds = Math.floor((difference % (1000 * 60)) / 100);
