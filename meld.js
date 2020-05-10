@@ -222,9 +222,12 @@ function EndBout() {
     if ( n2*1==MaxPoints*1 ) { e2="V"; e1="D" };
     if ( n1*1>n2*1 ) { e1="V"; e2="D" };
     if ( n1*1<n2*1 ) { e2="V"; e1="D" };
-    if ( n1*1==n2*1 ){ e1="V"; e2="D" }
-    if (e2=="A") { e2="V"; e1="D" } 
-    
+    if ( n1*1==n2*1 ) 
+    { 
+      if (e2=="A") { e2="V"; e1="D" } 
+      if (e1=="A") { e1="V"; e2="D" }
+    }
+        
     document.getElementById("S21").innerHTML=e1;
     document.getElementById("S12").innerHTML=e2;
     document.getElementById("S21a").innerHTML=n1;
