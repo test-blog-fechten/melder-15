@@ -2,7 +2,7 @@ const MaxPoints = 15; // 5,10,15,45 are typical for fencing.
 
 function AddAbschnitt() {
     var n=document.getElementById("ab").innerHTML;
-    if ( n<3 ) 
+    if ( n*1<3 ) 
     { 
       n=n*1+1; 
     } 
@@ -19,7 +19,7 @@ function PCard() {
 
 function RedCPRed() {
     var n=document.getElementById("c1pr").innerHTML;
-    if ( n<2 ) 
+    if ( n*1<2 ) 
     { 
       n=n*1+1; 
     } 
@@ -33,7 +33,7 @@ function RedCPRed() {
 
 function YellowCPRed() {
     var n=document.getElementById("c1py").innerHTML;
-    if ( n<1 ) 
+    if ( n*1<1 ) 
     { 
       n=n*1+1; 
     }
@@ -45,12 +45,12 @@ function YellowCPRed() {
 }
 function BlackCPRed() {
     var n=document.getElementById("c1pb").innerHTML;
-    if ( n<1 ) { n=n*1+1; };
+    if ( n*1<1 ) { n=n*1+1; };
     document.getElementById("c1pb").innerHTML=n;
 }
 function RedCPGreen() {      
     var n=document.getElementById("c2pr").innerHTML;
-    if ( n<2 ) 
+    if ( n*1<2 ) 
     { 
       n=n*1+1; 
     } 
@@ -63,7 +63,7 @@ function RedCPGreen() {
 }
 function YellowCPGreen() {     
     var n=document.getElementById("c2py").innerHTML;
-    if ( n<1 ) 
+    if ( n*1<1 ) 
     { 
       n=n*1+1; 
     }
@@ -75,7 +75,7 @@ function YellowCPGreen() {
 }
 function BlackCPGreen() {
     var n=document.getElementById("c2pb").innerHTML;
-    if ( n<1 ) { n=n*1+1; };
+    if ( n*1<1 ) { n=n*1+1; };
     document.getElementById("c2pb").innerHTML=n;
 }
 
@@ -87,7 +87,7 @@ function RedCRed() {
 }
 function YellowCRed() {
     var n=document.getElementById("c1y").innerHTML;
-    if ( n<1 ) 
+    if ( n*1<1 ) 
     { 
       n=n*1+1;
     }
@@ -105,7 +105,7 @@ function RedCGreen() {
 }
 function YellowCGreen() {     
     var n=document.getElementById("c2y").innerHTML;
-    if ( n<1 ) 
+    if ( n*1<1 ) 
     { 
       n=n*1+1;
     }
@@ -156,17 +156,23 @@ function RedPlus() {
     var e=document.getElementById("S12").innerHTML[0];
     var n1=document.getElementById("S12a").innerHTML;
     var a=document.getElementById("S21").innerHTML[0];
-    if ( n1<MaxPoints ) { n1=n1*1+1; };
-    document.getElementById("S12").innerHTML=e;
-    document.getElementById("S12a").innerHTML=n1; 
-    if ( n1==MaxPoints ) { EndBout(); }
-    else {if ( e=="A" || a=="A" ) { EndBout(); }; }    
+    if ( a=="V" || e=="V" ) 
+    {
+    } 
+    else
+    {      
+      if ( n1*1<MaxPoints*1 ) { n1=n1*1+1; };
+      document.getElementById("S12").innerHTML=e;
+      document.getElementById("S12a").innerHTML=n1; 
+      if ( n1*1==MaxPoints*1 ) { EndBout(); }
+      else {if ( e=="A" || a=="A" ) { EndBout(); }; }
+    }
 }
 
 function RedMinus() {
     var e=document.getElementById("S12").innerHTML[0];
     var n1=document.getElementById("S12a").innerHTML;
-    if ( n1>0 ) { n1=n1*1-1; };
+    if ( n1*1>0 ) { n1=n1*1-1; };
     document.getElementById("S12").innerHTML=e;
     document.getElementById("S12a").innerHTML=n1;
 }
@@ -175,26 +181,36 @@ function GreenPlus() {
     var e=document.getElementById("S21").innerHTML[0];
     var n1=document.getElementById("S21a").innerHTML;
     var a=document.getElementById("S12").innerHTML[0];
-    if ( n1<MaxPoints ) { n1=n1*1+1; };
-    document.getElementById("S21").innerHTML=e;
-    document.getElementById("S21a").innerHTML=n1;
-    if ( n1==MaxPoints ) { EndBout(); }
-    else {if ( e=="A" || a=="A" ) { EndBout(); }; }
+    if ( a=="V" || e=="V" ) 
+    {
+    } 
+    else
+    {      
+      if ( n1*1<MaxPoints*1 ) { n1=n1*1+1; };
+      document.getElementById("S21").innerHTML=e;
+      document.getElementById("S21a").innerHTML=n1;
+      if ( n1*1==MaxPoints*1 ) { EndBout(); }
+      else {if ( e=="A" || a=="A" ) { EndBout(); }; }
+    }    
 }
 
 function GreenMinus() {
     var e=document.getElementById("S21").innerHTML[0];
     var n1=document.getElementById("S21a").innerHTML;
-    if ( n1>0 ) { n1=n1*1-1; };
+    if ( n1*1>0 ) { n1=n1*1-1; };
     document.getElementById("S21").innerHTML=e;
     document.getElementById("S21a").innerHTML=n1;
 }
 
 function GreenV() {
+    var e=document.getElementById("S12").innerHTML[0];
     document.getElementById("S21").innerHTML="A";
+    if (e=="A") {document.getElementById("S12").innerHTML=" ";}
 }    
 function RedV() {
+    var e=document.getElementById("S21").innerHTML[0];
     document.getElementById("S12").innerHTML="A";
+    if (e=="A") {document.getElementById("S21").innerHTML=" ";}
 }
     
 function EndBout() { 
@@ -202,14 +218,13 @@ function EndBout() {
     var e2=document.getElementById("S12").innerHTML[0];
     var n1=document.getElementById("S21a").innerHTML;
     var n2=document.getElementById("S12a").innerHTML;
-    if ( n1==MaxPoints ) { e1="V"; e2="D" };
-    if ( n2==MaxPoints ) { e2="V"; e1="D" };
-    if ( n1>n2 ) { e1="V"; e2="D" };
-    if ( n1<n2 ) { e2="V"; e1="D" };
-    if ( n1==n2 ) {
-      if (e1=="A") { e1="V"; e2="D" }
-      if (e2=="A") { e2="V"; e1="D" } 
-    };
+    if ( n1*1==MaxPoints*1 ) { e1="V"; e2="D" };
+    if ( n2*1==MaxPoints*1 ) { e2="V"; e1="D" };
+    if ( n1*1>n2*1 ) { e1="V"; e2="D" };
+    if ( n1*1<n2*1 ) { e2="V"; e1="D" };
+    if ( n1*1==n2*1 ){ e1="V"; e2="D" }
+    if (e2=="A") { e2="V"; e1="D" } 
+    
     document.getElementById("S21").innerHTML=e1;
     document.getElementById("S12").innerHTML=e2;
     document.getElementById("S21a").innerHTML=n1;
@@ -221,16 +236,22 @@ function Double() {
     var n1=document.getElementById("S21a").innerHTML;
     var e2=document.getElementById("S12").innerHTML[0];
     var n2=document.getElementById("S12a").innerHTML;
-    if ( n1<MaxPoints ) { n1=n1*1+1; };
-    if ( n2<MaxPoints ) { n2=n2*1+1; };
-    document.getElementById("S21").innerHTML=e1;
-    document.getElementById("S12").innerHTML=e2;
-    document.getElementById("S21a").innerHTML=n1;
-    document.getElementById("S12a").innerHTML=n2;
-    if ( n1==MaxPoints && n2<MaxPoints ) { EndBout(); };
-    if ( n2==MaxPoints && n1<MaxPoints ) { EndBout(); };
-    if ( n2==MaxPoints && n1==MaxPoints ) { 
-      GreenMinus(); 
-      RedMinus(); 
-    }  
+    if ( e1=="V" || e2=="V" ) 
+    {
+    } 
+      else
+    {
+      if ( n1*1<MaxPoints*1 ) { n1=n1*1+1; };
+      if ( n2*1<MaxPoints*1 ) { n2=n2*1+1; };
+      document.getElementById("S21").innerHTML=e1;
+      document.getElementById("S12").innerHTML=e2;
+      document.getElementById("S21a").innerHTML=n1;
+      document.getElementById("S12a").innerHTML=n2;
+      if ( n1*1==MaxPoints*1 && n2*1<MaxPoints*1 ) { EndBout(); };
+      if ( n2*1==MaxPoints*1 && n1*1<MaxPoints*1 ) { EndBout(); };
+      if ( n2*1==MaxPoints*1 && n1*1==MaxPoints*1 ) { 
+        GreenMinus(); 
+        RedMinus(); 
+      }
+    }    
 }
