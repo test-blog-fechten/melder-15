@@ -165,7 +165,7 @@ function resetTimer2(){
   difference2 = 0;
   paused2 = 0;
   running2 = 0;
-  timerDisplay2.innerHTML = '1:00';
+  timerDisplay2.innerHTML = '1:00:000';
   timerDisplay2.style.cursor = "pointer";
   startTimerButton2.classList.remove('lighter');
   pauseTimerButton2.classList.remove('lighter');
@@ -236,5 +236,8 @@ function getShowTime2(){
   minutes2 = 0;
   seconds2 = 59-1*seconds2;
   seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
-  timerDisplay2.innerHTML = minutes2 + ':' + seconds2 ;
+  
+  var milliseconds = e.getMilliseconds();
+  milliseconds2 = (milliseconds2 < 100) ? (milliseconds2 < 10) ? "00" + milliseconds2 : "0" + milliseconds2 : milliseconds2;
+  timerDisplay2.innerHTML = minutes + ':' + seconds + ':' + milliseconds;
 }
