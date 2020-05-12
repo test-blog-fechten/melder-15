@@ -137,7 +137,7 @@ function resetTimer(){
   difference = 0;
   paused = 0;
   running = 0;
-  timerDisplay.innerHTML = '3:00';
+  timerDisplay.innerHTML = '3:00:000';
   timerDisplay.style.cursor = "pointer";
   startTimerButton.classList.remove('lighter');
   pauseTimerButton.classList.remove('lighter');
@@ -183,17 +183,18 @@ function getShowTime(){
   var e = new Date(difference);
   var minutes = e.getMinutes();
   minutes = (minutes < 10) ?  minutes : minutes;
-  var seconds = e.getSeconds();
-  seconds = (seconds < 10) ? "0" + seconds : seconds;
-  var milliseconds = e.getMilliseconds();
-  milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
+  
   if (minutes >2 ) { pauseTimer(); pauseTimer1(); };
   minutes = 2-1*minutes; 
   minutes = (minutes < 10) ?  minutes : minutes;
-  
+
+  var seconds = e.getSeconds();
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
   seconds = 59-1*seconds;
   seconds = (seconds < 10) ? "0" + seconds : seconds;
-  // milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
+  
+  var milliseconds = e.getMilliseconds();
+  milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
   timerDisplay.innerHTML = minutes + ':' + seconds + ':' + milliseconds;
 }
 
@@ -205,9 +206,11 @@ function getShowTime1(){
   } else {
     difference1 =  updatedTime1 - startTime1;
   }
-  var minutes1 = Math.floor((difference1 % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds1 = Math.floor((difference1 % (1000 * 60)) / 1000);
-  var milliseconds1 = Math.floor((difference1 % (100 * 60)));
+  var e = new Date(difference1);
+  var minutes1 = e.getMinutes();
+  minutes1 = (minutes1 < 10) ?  minutes1 : minutes1;
+  var seconds1 = e.getSeconds();
+  seconds1 = (seconds1 < 10) ? "0" + seconds1 : seconds1;
   
   if (minutes1 > 0) { resetTimer1(); pauseTimer1(); };
   minutes1 = 0;
@@ -228,9 +231,7 @@ function getShowTime2(){
   minutes2 = (minutes2 < 10) ?  minutes2 : minutes2;
   var seconds2 = e.getSeconds();
   seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
-  var milliseconds2 = e.getMilliseconds();
-  milliseconds2 = (milliseconds2 < 100) ? (milliseconds2 < 10) ? "00" + milliseconds2 : "0" + milliseconds2 : milliseconds2;
-  
+    
   if (minutes2 > 0) { pauseTimer2(); };
   minutes2 = 0;
   seconds2 = 59-1*seconds2;
