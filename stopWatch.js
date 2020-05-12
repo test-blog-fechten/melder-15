@@ -194,7 +194,7 @@ function getShowTime(){
   seconds = 59-1*seconds;
   seconds = (seconds < 10) ? "0" + seconds : seconds;
   // milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
-  timerDisplay.innerHTML = minutes + ':' + seconds; // + ':' + milliseconds;
+  timerDisplay.innerHTML = minutes + ':' + seconds + ':' + milliseconds;
 }
 
 
@@ -235,6 +235,5 @@ function getShowTime2(){
   minutes2 = 0;
   seconds2 = 59-1*seconds2;
   seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
-  timerDisplay2.innerHTML = minutes2 + ':' + seconds2 + ':' + milliseconds2 ;
-;
+  timerDisplay2.innerHTML = minutes2 + ':' + seconds2 ;
 }
