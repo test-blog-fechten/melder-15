@@ -180,9 +180,13 @@ function getShowTime(){
   } else {
     difference =  updatedTime - startTime;
   }
-  var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-  var milliseconds = Math.floor((difference % (1000 * 60)) / 100);
+  var e = new Date(difference);
+  var minutes = e.getMinutes();
+  minutes = (minutes < 10) ?  minutes : minutes;
+  var seconds = e.getSeconds();
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+  var milliseconds = e.getMilliseconds();
+  milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
   if (minutes >2 ) { pauseTimer(); pauseTimer1(); };
   minutes = 2-1*minutes; 
   minutes = (minutes < 10) ?  minutes : minutes;
