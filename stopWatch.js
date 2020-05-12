@@ -224,7 +224,7 @@ function getShowTime2(){
   minutes2 = (minutes2 < 10) ?  minutes2 : minutes2;
   var seconds2 = e.getSeconds();
   seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
-  var milliseconds2 = e.getMilliseconds2();
+  var milliseconds2 = e.getMilliseconds();
   milliseconds2 = (milliseconds2 < 100) ? (milliseconds2 < 10) ? "00" + milliseconds2 : "0" + milliseconds2 : milliseconds2;
   
   if (minutes2 > 0) { pauseTimer2(); };
