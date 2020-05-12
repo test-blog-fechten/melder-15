@@ -237,7 +237,7 @@ function getShowTime2(){
   seconds2 = 59-1*seconds2;
   seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
   
-  var milliseconds = e.getMilliseconds();
+  var milliseconds2 = e.getMilliseconds();
   milliseconds2 = (milliseconds2 < 100) ? (milliseconds2 < 10) ? "00" + milliseconds2 : "0" + milliseconds2 : milliseconds2;
   timerDisplay2.innerHTML = minutes + ':' + seconds + ':' + milliseconds;
 }
