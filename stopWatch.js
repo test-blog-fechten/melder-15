@@ -239,5 +239,5 @@ function getShowTime2(){
   
   var milliseconds2 = e.getMilliseconds();
   milliseconds2 = (milliseconds2 < 100) ? (milliseconds2 < 10) ? "00" + milliseconds2 : "0" + milliseconds2 : milliseconds2;
-  timerDisplay2.innerHTML = minutes + ':' + seconds + ':' + milliseconds;
+  timerDisplay2.innerHTML = minutes2 + ':' + seconds2 + ':' + milliseconds2;
 }
