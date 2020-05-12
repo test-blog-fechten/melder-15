@@ -219,13 +219,18 @@ function getShowTime2(){
   } else {
     difference2 =  updatedTime2 - startTime2;
   }
-  var minutes2 = Math.floor((difference2 % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds2 = Math.floor((difference2 % (1000 * 60)) / 1000);
-  var milliseconds2 = Math.floor((difference2 % (100 * 60)));
+  var e = new Date(difference2);
+  var minutes2 = e.getMinutes();
+  minutes2 = (minutes2 < 10) ?  minutes2 : minutes2;
+  var seconds2 = e.getSeconds();
+  seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
+  var milliseconds2 = e.getMilliseconds2();
+  milliseconds2 = (milliseconds2 < 100) ? (milliseconds2 < 10) ? "00" + milliseconds2 : "0" + milliseconds2 : milliseconds2;
   
   if (minutes2 > 0) { pauseTimer2(); };
   minutes2 = 0;
   seconds2 = 59-1*seconds2;
   seconds2 = (seconds2 < 10) ? "0" + seconds2 : seconds2;
-  timerDisplay2.innerHTML = minutes2 + ':' + seconds2;
+  timerDisplay2.innerHTML = minutes2 + ':' + seconds2 + ':' + milliseconds ;
+;
 }
