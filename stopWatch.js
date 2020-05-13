@@ -1,3 +1,4 @@
+// To mutch global variables!
 var startTimerButton = document.querySelector('.startTimer');
 var startTimerButton1 = document.querySelector('.startTimer1');
 var startTimerButton2 = document.querySelector('.startTimer2');
@@ -30,6 +31,8 @@ var running = 0;
 var running1 = 0;
 var running2 = 0;
 
+
+// functions can merged together!!
 function startTimer(){
   if(!running){
     startTime = new Date().getTime();
