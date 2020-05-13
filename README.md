@@ -19,3 +19,7 @@ PC = Passivität Karte. Gelb --> 2 * Rot --> Schwarz (Sieg für den Gegner wenn 
 Untere Uhr für 1min Pause und Sudden Death!
 
 C1 soll nicht das Ergebniss löschen und somit Korrekturen ermöglichen. Scheint nicht immer sinnvoll nutzbar.
+
+Eine gelbe Karte dann nur noch Rote Karten
+
+Eine gelbe P Karte dann 2 * Rot dann Schwarz. Beide Fechter Schwarz bedeutet Gewinner wird nach Rangliste ermittelt.  
