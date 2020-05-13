@@ -1,3 +1,5 @@
+Regeln 2020-05-13 / asc
+
 Ein weiters einfaches Beispiel für die TRP und Kampfrichter Ausbildung!
 
 Ein einzelnes Gefecht DA auf z.B auf 15 Punkte!
