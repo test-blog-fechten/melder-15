@@ -1,4 +1,4 @@
-// To mutch global variables!
+// To mutch global variables! To mutch code that do the same job!
 var startTimerButton = document.querySelector('.startTimer');
 var startTimerButton1 = document.querySelector('.startTimer1');
 var startTimerButton2 = document.querySelector('.startTimer2');
